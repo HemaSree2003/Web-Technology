@@ -1,0 +1,39 @@
+ <html>
+  <head>
+    <title>cnt</title>
+    <script type="text/javascript">
+      function cnt_wrd_lines_chars(){
+        var text=document.getElementById("txt").value;
+        var lncnt=0,wdcnt=0,chcnt=0;
+        var lines=text.split("\n");
+        lncnt=lines.length;
+        for(var i=0;i<lncnt;i++){
+          var words=lines[i].split(" ");
+          wdcnt+=words.length;
+          for(var j=0;j<words.length;j++){
+            chcnt+=words[j].length;
+          }
+        }
+        document.getElementById("res1").value=lncnt;
+        document.getElementById("res2").value=wdcnt;
+        document.getElementById("res3").value=chcnt;
+      }
+    </script>
+  </head>
+  <body 
+    <center>
+      <h1>No of Lines,Words,Characters</h1>
+    <form name="f1">
+      Enter the text:
+      <textarea rows="3" cols="25" id="txt" value="text"></textarea><br><br>
+      <input type="button" onclick="cnt_wrd_lines_chars()" value="COUNT"><br><br>
+      No of lines:
+      <input type="text" val="" id="res1"><br><br>
+      No of words:
+      <input type="text" val="" id="res2"><br><br>
+      No of characters:
+      <input type="text" val="" id="res3"><br><br>
+    </form>
+    </center>
+  </body>
+</html>
